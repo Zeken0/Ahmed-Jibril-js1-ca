@@ -1,0 +1,35 @@
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 10px;
+  row-gap: 10px;
+  margin-top: 6.4rem;
+}
+
+#cards {
+  padding: 10px;
+  border: solid black 5px;
+  width: 400px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+p {
+  font-size: 20px;
+}
+
+.alert {
+  width: 100%;
+}
+
+.danger {
+  background-color: rgb(255 124 124);
+  color: red;
+  border: solid 1px red;
+  padding: 20px;
+  transition: 2s;
+}

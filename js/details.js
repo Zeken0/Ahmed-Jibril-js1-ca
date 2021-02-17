@@ -9,32 +9,34 @@ const id = params.get('id');
 async function getCases(caseId) {
     try {
         console.log(caseId);
-        const repsonse = await fetch('https://noroffcors.herokuapp.com/https://api.covid19api.com/summary/' + caseId);
+        const repsonse = await fetch('https://api.covid19api.com/summary/' + caseId);
         const jsonResults = await repsonse.json();
         const result = jsonResults.Countries;
 
-        document.title = result.Country;
-		document.querySelector('h1').innerHTML = `${result.Country}`;
+        for (let i = 0; i < result.length; i++) {
+            document.title = `${result[i].Country}`;
 
-		document.querySelector('.totalConfirmed').innerHTML =`
-        <p>Total-cases:${result.TotalConfirmed}</p>
-        `;
-		document.querySelector('.newConfirmed').innerHTML =`
-        <p>New-cases ${result.NewConfirmed}</p>
-        `;
-		document.querySelector('.totalDeaths').innerHTML =`
-        <p>Total-deaths ${result.TotalDeaths}</p>
-        `;
-		document.querySelector('.newDeaths').innerHTML =`
-        <p>New-deaths ${result.NewDeaths}</p>
-        `;
-		document.querySelector('.totalRecovered').innerHTML =`
-        <p>Total-Recovered ${result.TotalRecovered}</p>
-        `;
-		document.querySelector('.newRecovered').innerHTML =`
-        <p>New-recovered ${result.NewRecovered}</p>
-        `;
-        
+            document.querySelector('h1').innerHTML = `${result[i].Country}`;
+
+            document.querySelector('.totalConfirmed').innerHTML =`
+            <p>Total-cases: ${result[i].TotalConfirmed}</p>
+            `;
+            document.querySelector('.newConfirmed').innerHTML =`
+            <p>New-cases: ${result[i].NewConfirmed}</p>
+            `;
+            document.querySelector('.totalDeaths').innerHTML =`
+            <p>Total-deaths: ${result[i].TotalDeaths}</p>
+            `;
+            document.querySelector('.newDeaths').innerHTML =`
+            <p>New-deaths: ${result[i].NewDeaths}</p>
+            `;
+            document.querySelector('.totalRecovered').innerHTML =`
+            <p>Total-recovered: ${result[i].TotalRecovered}</p>
+            `;
+            document.querySelector('.newRecovered').innerHTML =`
+            <p>New-recovered: ${result[i].NewRecovered}</p>
+            `;
+        };
     } catch (error) {
         document.querySelector('.alert').innerHTML += thisIsAnAlert(
             'An error has occured',
