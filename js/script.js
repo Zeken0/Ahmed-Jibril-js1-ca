@@ -1,16 +1,19 @@
-async function getCases() {
+async function getCards() {
     try {
-        const repsonse = await fetch('https://api.covid19api.com/summary');
+        const repsonse = await fetch('https://api.magicthegathering.io/v1/cards/');
         const jsonResults = await repsonse.json();
-        const result = jsonResults.Countries;
+        const result = jsonResults.cards;
 
+        document.querySelector('.contact').innerHTML =`
+        <a href="contact.html" id=contact>Contact Us</a>
+        `;
         for (let i = 0; i < result.length; i++) {
 
             document.querySelector('main').innerHTML += `
             <div class="cards">
-                <h2>${result[i].Country}</h2>
-                <p>${result[i].Date}</p>
-                <a href="details.html?id="">View Cases</a>
+                <img src="${result[i].imageUrl}">
+                <p>Card number: ${result[i].number}</p>
+                <a href="details.html?id="${result[i].id}">Read More</a>
             </div>
             `;
         }
@@ -26,4 +29,4 @@ async function getCases() {
         }, 3000);
     }
 };
-getCases();
+getCards();

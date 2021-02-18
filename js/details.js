@@ -6,35 +6,35 @@ console.log(params);
 // get the id parameter from the query string
 const id = params.get('id');
 
-async function getCases(caseId) {
+async function getCards(cardId) {
     try {
-        console.log(caseId);
-        const repsonse = await fetch('https://api.covid19api.com/summary/' + caseId);
+        console.log(cardId);
+        const repsonse = await fetch('https://api.magicthegathering.io/v1/cards/' + cardId);
         const jsonResults = await repsonse.json();
-        const result = jsonResults.Countries;
+        const result = jsonResults.cards;
 
         for (let i = 0; i < result.length; i++) {
-            document.title = `${result[i].Country}`;
-
-            document.querySelector('h1').innerHTML =`${result[i].Country}`;
-
-            document.querySelector('.totalConfirmed').innerHTML =`
-            <p>Total-cases: ${result[i].TotalConfirmed}</p>
+            
+            document.title =`
+            ${result[i].name}
             `;
-            document.querySelector('.newConfirmed').innerHTML =`
-            <p>New-cases: ${result[i].NewConfirmed}</p>
+            document.querySelector('h1').innerHTML =`
+            ${result[i].name}
             `;
-            document.querySelector('.totalDeaths').innerHTML =`
-            <p>Total-deaths: ${result[i].TotalDeaths}</p>
+            document.querySelector('.setName').innerHTML =`
+            <p>Set-name: ${result[i].setName}</p>
             `;
-            document.querySelector('.newDeaths').innerHTML =`
-            <p>New-deaths: ${result[i].NewDeaths}</p>
+            document.querySelector('.rarity').innerHTML =`
+            <p>Rarity: ${result[i].rarity}</p>
             `;
-            document.querySelector('.totalRecovered').innerHTML =`
-            <p>Total-recovered: ${result[i].TotalRecovered}</p>
+            document.querySelector('.type').innerHTML =`
+            <p>Type: ${result[i].type}</p>
             `;
-            document.querySelector('.newRecovered').innerHTML =`
-            <p>New-recovered: ${result[i].NewRecovered}</p>
+            document.querySelector('.layout').innerHTML =`
+            <p>Layout: ${result[i].layout}</p>
+            `;
+            document.querySelector('.artist').innerHTML =`
+            <p>Artist: ${result[i].artist}</p>
             `;
         };
     } catch (error) {
@@ -49,4 +49,4 @@ async function getCases(caseId) {
         }, 3000);
     }
 };
-getCases(id);
+getCards(id);

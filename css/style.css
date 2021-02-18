@@ -1,10 +1,16 @@
 body {
   text-align: center;
+  background-color: black;
+  justify-content: center;
 }
 
 h1 {
   font-size: 50px;
-  color: purple;
+  color: wheat;
+}
+
+p {
+  color: wheat;
 }
 
 main {
@@ -17,8 +23,8 @@ main {
 
 .cards {
   padding: 10px;
-  border: solid black 5px;
-  width: 300px;
+  border: solid wheat 5px;
+  width: 220px;
   text-align: center;
 }
 
@@ -34,19 +40,20 @@ main {
   transition: 2s;
 }
 
-img {
-  width: 100%;
-  height: 200px;
-}
-
 a {
   display: block;
-  background-color: orange;
+  background-color: wheat;
   padding: 15px 10px;
   text-decoration: none;
   color: black;
   font-size: 20px;
   text-align: center;
+}
+
+#contact {
+  display: inline-block;
+  width: 200px;
+  margin-bottom: 20px;
 }
 
 a:hover {
