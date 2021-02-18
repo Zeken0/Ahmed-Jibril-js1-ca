@@ -16,7 +16,7 @@ async function getCases(caseId) {
         for (let i = 0; i < result.length; i++) {
             document.title = `${result[i].Country}`;
 
-            document.querySelector('h1').innerHTML = `${result[i].Country}`;
+            document.querySelector('h1').innerHTML =`${result[i].Country}`;
 
             document.querySelector('.totalConfirmed').innerHTML =`
             <p>Total-cases: ${result[i].TotalConfirmed}</p>
