@@ -62,7 +62,8 @@ button {
 }
 
 button:hover {
-  text-decoration: underline;
+  background-color: white;
+  color: black;
 }
 
 .hide {

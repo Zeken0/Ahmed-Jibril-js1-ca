@@ -52,8 +52,8 @@ a {
 
 #contact {
   display: inline-block;
-  width: 200px;
-  margin-bottom: 20px;
+  width: 65px;
+  font-size: 14px;
 }
 
 a:hover {
