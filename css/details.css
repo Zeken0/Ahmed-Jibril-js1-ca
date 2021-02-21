@@ -5,17 +5,16 @@ body {
 
 main {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   column-gap: 10px;
   row-gap: 10px;
-  margin-top: 8rem;
+  margin-top: 7rem;
 }
 
 #cards {
-  padding: 10px;
-  border: solid wheat 5px;
-  width: 400px;
+  padding: 20px;
+  border: solid wheat 10px;
+  width: fit-content;
   text-align: center;
 }
 

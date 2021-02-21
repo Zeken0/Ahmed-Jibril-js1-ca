@@ -34,7 +34,6 @@ async function getCard(cardId) {
             document.querySelector('.artist').innerHTML =`
             <p>Artist: ${result.artist}</p>
             `;
-
     } catch (error) {
         document.querySelector('.alert').innerHTML += thisIsAnAlert(
             'An error has occured',
